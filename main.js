@@ -19,9 +19,20 @@ myIntents.add(
 
 const client = new Client({ intents: myIntents });
 const config = require('./config.json');
+const prefix = '-'
 
 client.once('ready', () => {
     console.log('Hello world!');
+})
+
+client.on('messageCreate', message => {
+    if (!message.content.startsWith(prefix) || message.author.bot || message.channel.type === 'DM') return;
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+
+    if (command === 'ping') {
+        message.channel.send('pong!')
+    }
 })
 
 // Keep this at the end of the main.js file
