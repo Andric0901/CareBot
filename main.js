@@ -40,6 +40,18 @@ client.on('messageCreate', message => {
 
         message.channel.send({ embeds: [embed] })
     }
+
+    if (command === 'init') {
+        message.delete()
+        const embed = new MessageEmbed()
+            .setColor('#0099ff')
+            .setTitle('Sample message!')
+            .setDescription('Good night!!! :>')
+        message.author.send({ embeds: [embed] }).then(sentMessage => {
+            sentMessage.react('✔')
+            sentMessage.react('❌')
+        })
+    }
 });
 
 
