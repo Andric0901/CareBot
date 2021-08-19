@@ -25,7 +25,7 @@ client.once('ready', () => {
     console.log('Hello world!');
 });
 
-const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 
 client.on('messageCreate', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -33,20 +33,12 @@ client.on('messageCreate', message => {
     const command = args.shift().toLowerCase();
 
     if (command === 'sleep') {
-        const row = new MessageActionRow()
-            .addComponents(
-                new MessageButton()
-                    .setCustomId('primary')
-                    .setLabel('Sleep!')
-                    .setStyle('PRIMARY'),
-            );
-
         const embed = new MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Make sure to sleep!')
             .setDescription('Your body wants it :>');
 
-        message.channel.send({ content: "hello world!", components: [row], embeds: [embed] })
+        message.channel.send({ embeds: [embed] })
     }
 });
 
