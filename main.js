@@ -19,7 +19,6 @@ myIntents.add(
 
 const client = new Client({ intents: myIntents });
 const config = require('./config.json');
-const prefix = '-'
 
 client.once('ready', () => {
     console.log('Hello world!');
@@ -27,9 +26,9 @@ client.once('ready', () => {
 
 const { MessageEmbed } = require('discord.js');
 
-client.on('messageCreate', message => {
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
-    const args = message.content.slice(prefix.length).split(/ +/);
+client.on('messageCreate', async message => {
+    if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+    const args = message.content.slice(config.prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
     if (command === 'sleep') {
@@ -38,7 +37,7 @@ client.on('messageCreate', message => {
             .setTitle('Make sure to sleep!')
             .setDescription('Your body wants it :>');
 
-        message.channel.send({ embeds: [embed] })
+        await message.channel.send({ embeds: [embed] })
     }
 
     if (command === 'init') {
@@ -47,12 +46,38 @@ client.on('messageCreate', message => {
             .setColor('#0099ff')
             .setTitle('Sample message!')
             .setDescription('Good night!!! :>')
-        message.author.send({ embeds: [embed] }).then(sentMessage => {
-            sentMessage.react('✔')
-            sentMessage.react('❌')
+            
+        const sentMessage = await message.channel.send({ embeds: [embed] })
+
+        sentMessage.react('✅').then(() => sentMessage.react('❌'))
+
+        sentMessage.awaitReactions((r) => ['✅', '❌'].includes(r.emoji.name), {max: 1})
+        .then(collected => {
+            console.log(user.id)
+            let r = collected.first()
+            console.log(r)
+            if (r.emoji.name =='✅') {
+                console.log(r.emoji.name)
+                const checkmarkEmbed = new MessageEmbed()
+                .setTitle("Test Checkmark Embed")
+                .setDescription("Test that the checkmark embed went through")
+            
+                message.channel.send({ embeds: [checkmarkEmbed]})
+                sentMessage.edit(checkmarkEmbed)
+            }
+            else if (r.emoji.name == '❌') {
+                console.log(r.emoji.name)
+                const crossEmbed = new MessageEmbed()
+                .setTitle("Test Cross Embed")
+                .setDescription("Test that the cross embed went through")
+            
+                message.channel.send({ embeds: [crossEmbed]})
+                sentMessage.edit(crossEmbed)
+            }
         })
     }
 });
+
 
 
 // Keep this at the end of the main.js file
