@@ -24,7 +24,7 @@ client.once('ready', () => {
     console.log('Hello world!');
 });
 
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed, MessageCollector } = require('discord.js');
 
 client.on('messageCreate', async message => {
     if (!message.content.startsWith(config.prefix) || message.author.bot) return;
@@ -37,48 +37,49 @@ client.on('messageCreate', async message => {
             .setTitle('Make sure to sleep!')
             .setDescription('Your body wants it :>');
 
-        await message.channel.send({ embeds: [embed] })
+        message.channel.send({ embeds: [embed] })
     }
 
     if (command === 'init') {
         message.delete()
-        const embed = new MessageEmbed()
+
+        let embed = new MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Sample message!')
-            .setDescription('Good night!!! :>')
-            
-        const sentMessage = await message.channel.send({ embeds: [embed] })
+            .setDescription('Good night!!! :> Press \'y\' to edit this message')
 
-        sentMessage.react('✅').then(() => sentMessage.react('❌'))
-
-        sentMessage.awaitReactions((r) => ['✅', '❌'].includes(r.emoji.name), {max: 1})
-        .then(collected => {
-            console.log(user.id)
-            let r = collected.first()
-            console.log(r)
-            if (r.emoji.name =='✅') {
-                console.log(r.emoji.name)
-                const checkmarkEmbed = new MessageEmbed()
-                .setTitle("Test Checkmark Embed")
-                .setDescription("Test that the checkmark embed went through")
-            
-                message.channel.send({ embeds: [checkmarkEmbed]})
-                sentMessage.edit(checkmarkEmbed)
-            }
-            else if (r.emoji.name == '❌') {
-                console.log(r.emoji.name)
-                const crossEmbed = new MessageEmbed()
-                .setTitle("Test Cross Embed")
-                .setDescription("Test that the cross embed went through")
-            
-                message.channel.send({ embeds: [crossEmbed]})
-                sentMessage.edit(crossEmbed)
-            }
+        message.guild.channels.create(message.author.username, {
+            type: 'text',
+            permissionOverwrites: [
+                {
+                    id: message.guild.id, // shortcut for @everyone role ID
+                    deny: 'VIEW_CHANNEL'
+                },
+                {
+                    id: message.author.id,
+                    allow: 'VIEW_CHANNEL'
+                }
+            ]
         })
+            .then(async channel => {
+                const sentMessage = await channel.send({ embeds: [embed] })
+
+                const collector = new MessageCollector(channel, m => m.author.id === message.author.id);
+                collector.on('collect', msg => {
+                    if (msg.content.toLowerCase() == "y") {
+                        embed = new MessageEmbed()
+                            .setColor('#0099ff')
+                            .setTitle('Sample message?')
+                            .setDescription('Good morning!!! :)')
+                        msg.delete()
+                        sentMessage.edit({ embeds: [embed] })
+                    } else if (msg.content.toLowerCase() == 'stop') {
+
+                    }
+                })
+            })
     }
 });
-
-
 
 // Keep this at the end of the main.js file
 client.login(config.token);
