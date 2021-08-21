@@ -47,6 +47,9 @@ client.on('messageCreate', async message => {
             .setColor('#0099ff')
             .setTitle('Sample message!')
             .setDescription('Good night!!! :> Press \'y\' to edit this message')
+            .addFields(
+                {name: 'Inline field title', value: 'Some value here', inline: false}
+            )
 
         message.guild.channels.create(message.author.username, {
             type: 'text',
@@ -69,9 +72,24 @@ client.on('messageCreate', async message => {
                 const randomTitles = ['Random #1', 'Random #2', 'Random #3', 'Random #4']
                 const randomDescriptions = ['Description #1', 'Description #2', 'Description #3', 'Description #4']
 
+                let timeoutID;
+
+                // 20 seconds for testing purposes, TODO: we should change this to something like 10 minutes
+                var inactivityCooldown = 1000 * 20;
+
+                timeoutID = setTimeout(() => {
+                    userStopped = !userStopped
+                    channel.delete().catch()
+                }, inactivityCooldown)
+
                 collector.on('collect', msg => {
                     if (!msg.author.bot && !userStopped) {
-                        msg.delete().catch(console.error())
+                        msg.delete().catch()
+                        clearTimeout(timeoutID)
+                        timeoutID = setTimeout(() => {
+                            userStopped = !userStopped
+                            channel.delete().catch()
+                        }, inactivityCooldown)
                     }
                     if (msg.content.toLowerCase() == "y" && !userStopped) {
                         let randomInteger1 = getRndInteger(0, randomTitles.length)
@@ -81,14 +99,20 @@ client.on('messageCreate', async message => {
                             .setTitle(randomTitles[randomInteger1])
                             .setDescription(randomDescriptions[randomInteger2])
                         sentMessage.edit({ embeds: [embed] })
+                        clearTimeout(timeoutID)
+                        timeoutID = setTimeout(() => {
+                            userStopped = !userStopped
+                            channel.delete().catch()
+                        }, inactivityCooldown)
                     } else if (msg.content.toLowerCase() == 'stop' && !userStopped) {
                         userStopped = !userStopped
+                        clearTimeout(timeoutID)
                         msg.channel.send('Thank you for using CareBot! I hope you have a wonderful day :)').then(endMessage => {
                             setTimeout(() => {
-                                endMessage.delete().catch(console.error())
+                                endMessage.delete().catch()
                             }, 10000);
                             setTimeout(() => {
-                                channel.delete().catch(console.error())
+                                channel.delete().catch()
                             }, 11000);
                         })
                     }
@@ -100,6 +124,10 @@ client.on('messageCreate', async message => {
 // returns a random integer, min inclusive and max exclusive
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function resetTimeout(timeoutID, channel, userStopped) {
+
 }
 
 // Keep this at the end of the main.js file
