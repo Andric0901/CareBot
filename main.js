@@ -40,16 +40,19 @@ client.on('messageCreate', async message => {
         message.channel.send({ embeds: [embed] })
     }
 
+    const okEmbedFields = { name: 'Type \'ok\'', value: 'To continue', inline: true }
+    const yesEmbedFields = { name: "Type 'yes'", value: "Yes!", inline: true }
+    const noEmbedFields = { name: "Type 'no'", value: "No :(", inline: true }
+    const stopEmbedFields = { name: "Type 'stop'", value: "To stop anytime", inline: true }
+
     if (command === 'init') {
         message.delete()
 
         let embed = new MessageEmbed()
             .setColor('#0099ff')
-            .setTitle('Sample message!')
-            .setDescription('Good night!!! :> Press \'y\' to edit this message')
-            .addFields(
-                {name: 'Inline field title', value: 'Some value here', inline: false}
-            )
+            .setTitle('Welcome!')
+            .setDescription('CareBot is a simple discord bot that can help you with your self-care routine. Let\'s get started!')
+            .addFields(okEmbedFields, stopEmbedFields)
 
         message.guild.channels.create(message.author.username, {
             type: 'text',
@@ -82,7 +85,14 @@ client.on('messageCreate', async message => {
                     channel.delete().catch()
                 }, inactivityCooldown)
 
+                let expectingYes = false;
+                let expectingNo = false;
+                let expectingOK = true;
+
                 collector.on('collect', msg => {
+                    let randomInteger1 = getRndInteger(0, randomTitles.length)
+                    let randomInteger2 = getRndInteger(0, randomDescriptions.length)
+
                     if (!msg.author.bot && !userStopped) {
                         msg.delete().catch()
                         clearTimeout(timeoutID)
@@ -91,14 +101,54 @@ client.on('messageCreate', async message => {
                             channel.delete().catch()
                         }, inactivityCooldown)
                     }
-                    if (msg.content.toLowerCase() == "y" && !userStopped) {
-                        let randomInteger1 = getRndInteger(0, randomTitles.length)
-                        let randomInteger2 = getRndInteger(0, randomDescriptions.length)
+                    if ((msg.content.toLowerCase() == "y" || msg.content.toLowerCase() == "yes") 
+                    && !userStopped && expectingYes) {
                         embed = new MessageEmbed()
                             .setColor('#0099ff')
-                            .setTitle(randomTitles[randomInteger1])
-                            .setDescription(randomDescriptions[randomInteger2])
+                            .setTitle("I am now expecting 'ok' or 'stop'")
+                            .setDescription("I edited this embed after being called by a 'yes' message!")
+                            .setFields(okEmbedFields, stopEmbedFields)
                         sentMessage.edit({ embeds: [embed] })
+                        clearTimeout(timeoutID)
+
+                        expectingYes = false
+                        expectingNo = false
+                        expectingOK = true
+
+                        timeoutID = setTimeout(() => {
+                            userStopped = !userStopped
+                            channel.delete().catch()
+                        }, inactivityCooldown)
+                    } else if ((msg.content.toLowerCase() == 'n' || msg.content.toLowerCase() == 'no') 
+                    && !userStopped && expectingNo) {
+                        embed = new MessageEmbed()
+                            .setColor('#0099ff')
+                            .setTitle("I am now expecting 'ok' or 'stop'")
+                            .setDescription("I edited this embed after being called by a 'no' message!")
+                            .setFields(okEmbedFields, stopEmbedFields)
+                        sentMessage.edit({ embeds: [embed] })
+
+                        expectingYes = false
+                        expectingNo = false
+                        expectingOK = true
+
+                        clearTimeout(timeoutID)
+                        timeoutID = setTimeout(() => {
+                            userStopped = !userStopped
+                            channel.delete().catch()
+                        }, inactivityCooldown)
+                    } else if (msg.content.toLowerCase() == 'ok' && !userStopped && expectingOK) {
+                        embed = new MessageEmbed()
+                            .setColor('#0099ff')
+                            .setTitle("I am now expecting 'yes', 'no' or 'stop'")
+                            .setDescription("I edited this embed after being called by an 'ok' message!")
+                            .setFields(yesEmbedFields, noEmbedFields, stopEmbedFields)
+                        sentMessage.edit({ embeds: [embed] })
+
+                        expectingYes = true
+                        expectingNo = true
+                        expectingOK = false
+                        
                         clearTimeout(timeoutID)
                         timeoutID = setTimeout(() => {
                             userStopped = !userStopped
@@ -107,13 +157,14 @@ client.on('messageCreate', async message => {
                     } else if (msg.content.toLowerCase() == 'stop' && !userStopped) {
                         userStopped = !userStopped
                         clearTimeout(timeoutID)
-                        msg.channel.send('Thank you for using CareBot! I hope you have a wonderful day :)').then(endMessage => {
-                            setTimeout(() => {
-                                endMessage.delete().catch()
-                            }, 10000);
+                        embed = new MessageEmbed()
+                            .setColor('#0099ff')
+                            .setTitle("Thank you for using CareBot!")
+                            .setDescription("Have a wonderful day/night!! You are amazing :)")
+                        sentMessage.edit({ embeds: [embed] }).then(() => {
                             setTimeout(() => {
                                 channel.delete().catch()
-                            }, 11000);
+                            }, 10000)
                         })
                     }
                 })
