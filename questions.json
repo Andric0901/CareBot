@@ -1,0 +1,31 @@
+{
+    "sleep": {
+        "titles": [
+            "Sleeeeeeep?", "I think you might need some sleep 💤", "\\*yawns\\*", "Did you sleep well last night?", "😪","Have you ever seen a sleepy dog? It's so cute"
+        ],
+        "descriptions": [
+            "Most adults need 7 or more hours of good-quality sleep on a regular schedule each night. Did you get some sleep too?",
+            "Fun fact: babies need between 12 to 16 hours of sleep, including naps! Sleeps are great and I'm pretty sure you got yourself lots of sleep too... Or did you?",
+            "Sleep helps with your mind and your body to stay healthy! How about some good 8 hours of sleep tonight?",
+            "Sleep can help you boost your immune system, and fight those bad guys that enter your body! Did you sleep well last night?"
+        ]
+    },
+    "water": {
+        "titles": ["Hydrate!", "\\*drinking water bottles\\*", "Did you drink water?", "Don't forget to drink water!"],
+        "descriptions": [
+            "Are you thirsty right now? How about a glass of water?",
+            "Hey, could you do me a quick favor? I want you to take a moment to grab yourself some water to get you going :)",
+            "The human body comprises approximately 60% water! Maybe it wouldn't hurt to go get some water, if you haven't already :>",
+            "Do you usually get lots of headaches? You may need to hydrate yourself - go get some water now! 🥤",
+            "Can you guess my favorite type of drinks? I'll give you a hint, it's not coke 👀 ||Drink some water!||"
+        ]
+    },
+    "exercise": {
+        "titles": ["exercise"],
+        "descriptions": ["exercise"]
+    },
+    "nap": {
+        "titles": ["nap"],
+        "descriptions": ["nap"]
+    }
+}

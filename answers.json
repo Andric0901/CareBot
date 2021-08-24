@@ -1,0 +1,40 @@
+{
+    "sleep": {
+        "yes": [
+            "Sleep will help you stay active during the day.",
+            "Remember that you just made one step towards your perfect life with lots of sleep!",
+            "Did you know that sleep can also help with your heart? I thought it was interesting and I just wanted to share this with you.",
+            "Did you know that sleep actually helps with your memory? I used to memorize those boring biology terms up until I went to bed, and it actually worked! I got a 95 in that quiz, and you should try it too :)"
+        ],
+        "no": [
+            "Sleep is good for you and you shouldn't skip it! I understand life can be complex and you just have so many things to do, but I promise you will do a better job if you have a full night of sleep :)",
+            "If you have trouble sleeping, you could also try taking melatonin, unless you have side effects from it. It can also help with jet lag after a long flight, but check with your doctor first!",
+            "If you wake up in the middle of the night, don't give up too soon and attempt to fall asleep again. If you still can't sleep after 30 minutes, you should try to do some low-commitment activities such as stretching or even laundry folding!",
+            "Try to limit your screen hours before sleep! Blue lights can distract you greatly and you might have trouble sleeping.",
+            "If your room is too hot or too cold, you should try to adjust it with your fans, AC or heaters. According to the National Sleep Foundation, the ideal sleep temperature range is between 60 and 67 degrees Fahrenheit, or between 15 and 20 degrees Celsius!"
+        ]
+    },
+    "water": {
+        "yes": [
+            "If you are not happy with your weight, drinking water could also help! I'm glad you got some water, you are doing the good stuffs to your body and you should be proud of yourself :>",
+            "Did you know that Turkish people drink the most tea? Although it may not help you hydrate as much as the water does, it can certainly help you stay fit!",
+            "Do you exercise a lot? You will lose your water inside your body, so it's crucial to have some portable water bottles with you when you go to gym or do some workouts!",
+            "If you don't wanna drink water, how about trying cucumbers? It contains 96% of water so it's basically eating and hydrating 🥤"
+        ],
+        "no": [
+            "Water helps to regulate your body temperature! There's a reason why I love to drink water :)",
+            "If you don't wanna drink water, how about trying cucumbers? It contains 96% of water so it's basically eating and hydrating 🥤",
+            "Although water is the best way to hydrate your body, if you don't feel like drinking water, you could totally try fruit juices or sparkling water. Soda will actually make you thirstier so I wouldn't recommend it, but if you want to drink it, it's okay!",
+            "Water helps the blood to deliver oxygen, which helps with the brain performance. If you are studying for an exam, pls don't forget to drink water :>",
+            "If you are not happy with your weight, drinking water could also help! I'm glad you got some water, you are doing the good stuffs to your body and you should be proud of yourself :>"
+        ]
+    },
+    "exercise": {
+        "yes": ["exercise"],
+        "no": ["exercise"]
+    },
+    "nap": {
+        "yes": ["nap"],
+        "no": ["nap"]
+    }
+}
