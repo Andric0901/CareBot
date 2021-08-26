@@ -35,8 +35,9 @@ let questionsKeys = []
 let answersKeys = []
 
 // randomizedIndexArray is an array containing all the valid indexes, randomized
+// Take the keys from the questions array (being the indices) and append then to the rand index array
 let randomizedIndexArray = []
-for (var i = 0; i < Object.keys(questions).length; i++) {
+for (let i = 0; i < Object.keys(questions).length; i++) {
     randomizedIndexArray.push(i)
 }
 
@@ -50,36 +51,42 @@ const { MessageEmbed, MessageCollector } = require('discord.js');
 
 client.on('messageCreate', async message => {
     if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+
+    // Parse the message by the command prefix and the command itself and retrieve the command
     const args = message.content.slice(config.prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
+    // Set up the different embeds that will be used
     const okEmbedFields = { name: 'Type \'ok\'', value: 'To continue', inline: true }
     const yesEmbedFields = { name: "Type 'yes'", value: "Yes!", inline: true }
     const noEmbedFields = { name: "Type 'no'", value: "No :(", inline: true }
     const stopEmbedFields = { name: "Type 'stop'", value: "To stop anytime", inline: true }
 
     if (command === 'init') {
+        // Delete the message with the init command and randomize the index array
         message.delete().catch()
         shuffle(randomizedIndexArray)
 
-        var userIDObject = JSON.parse(fs.readFileSync('userID.json'))
-        var userID = message.author.id;
+        // Grab the user's id from the message and put it into the userID object with the randomized array
+        let userIDObject = JSON.parse(fs.readFileSync('userID.json'))
+        let userID = message.author.id;
         userIDObject[userID] = randomizedIndexArray
+        // After modifying that user's array content, write the entire JSON back into the userID json
         fs.writeFileSync('userID.json', JSON.stringify(userIDObject));
-        // console.log(JSON.parse(fs.readFileSync('userID.json')))
-        // userID.json contains the js object that maps from user ID to the user-specific random index array (used 
-        // to randomize the embeds). TODO: read the file, store the randomized index array somewhere, and use that 
+        console.log(JSON.parse(fs.readFileSync('userID.json')))
+        // userID.json contains the js object that maps from user ID to the user-specific random index array (used
+        // to randomize the embeds). TODO: read the file, store the randomized index array somewhere, and use that
         // to actually randomize the embeds.
-        let jsonUserID = fs.readFileSync('userID.json')
-        const userIDs = JSON.parse(jsonUserID)
-        let userSpecificRandomArray;
-        for (var key in userIDs) {
-            if (userIDs.hasOwnProperty(key) && message.author.id === key) {
-                userSpecificRandomArray = userIDs[key]
-                break
-            }
-        }
-
+        // let jsonUserID = fs.readFileSync('userID.json')
+        // const userIDs = JSON.parse(jsonUserID)
+        let userSpecificRandomArray = randomizedIndexArray;
+        // for (let key in userIDs) {
+        //     if (userIDs.hasOwnProperty(key) && message.author.id === key) {
+        //         userSpecificRandomArray = userIDs[key]
+        //         break
+        //     }
+        // }
+        // Set up the introductory embed
         let embed = new MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Welcome!')
@@ -88,6 +95,7 @@ client.on('messageCreate', async message => {
             .setAuthor('CareBot', 'https://i.imgur.com/adMFcc1.png')
             .setThumbnail("https://i.imgur.com/adMFcc1.png")
 
+        // Create a new channel that only the author and admins can see
         message.guild.channels.create(message.author.username, {
             type: 'text',
             permissionOverwrites: [
@@ -110,7 +118,9 @@ client.on('messageCreate', async message => {
                 let timeoutID;
 
                 // 20 seconds for testing purposes, TODO: we should change this to something like 10 minutes
-                var inactivityCooldown = 1000 * 20;
+                let inactivityCooldown = 1000 * 600;
+
+                // Once user is inactive for 10 minutes, channel will auto-delete
 
                 timeoutID = setTimeout(() => {
                     userStopped = !userStopped
@@ -129,7 +139,9 @@ client.on('messageCreate', async message => {
                 collector.on('collect', msg => {
                     // console.log(questions[questionsKeys[4]]) // { titles: [...], descriptions: [...] }
                     // console.log(answers[answersKeys[4]]) // { yes: [...], no: [...] }
-                    if (!msg.author.bot && !userStopped && msg.content.toLowerCase() != "-init") {
+                    // If a user sends a message and the message doesn't contain the init command, reset the timeout
+
+                    if (!msg.author.bot && !userStopped && msg.content.toLowerCase() !== "-init") {
                         msg.delete().catch()
                         clearTimeout(timeoutID)
                         timeoutID = setTimeout(() => {
@@ -137,10 +149,11 @@ client.on('messageCreate', async message => {
                             channel.delete().catch()
                         }, inactivityCooldown)
                     }
-                    if ((msg.content.toLowerCase() == "y" || msg.content.toLowerCase() == "yes")
+                    if ((msg.content.toLowerCase() === "y" || msg.content.toLowerCase() === "yes")
                         && !userStopped && expectingYes) {
+                        // Fetch random title and category from json
                         let randomIndex = userSpecificRandomArray[currentIndex]
-                        let descriptions = answers[answersKeys[randomIndex]].yes
+                        let descriptions = answers[answersKeys[randomIndex]]['yes']
 
                         const randomTitle = yesTitles[getRndInteger(0, noTitles.length)]
                         const randomDescription = descriptions[getRndInteger(0, descriptions.length)]
@@ -167,15 +180,16 @@ client.on('messageCreate', async message => {
                             channel.delete().catch()
                         }, inactivityCooldown)
 
+                        // Once we reach the end of the array, reset the current index
                         if (currentIndex === userSpecificRandomArray.length - 1) {
                             currentIndex = 0
                         } else {
                             currentIndex++
                         }
-                    } else if ((msg.content.toLowerCase() == 'n' || msg.content.toLowerCase() == 'no')
+                    } else if ((msg.content.toLowerCase() === 'n' || msg.content.toLowerCase() === 'no')
                         && !userStopped && expectingNo) {
                         let randomIndex = userSpecificRandomArray[currentIndex]
-                        let descriptions = answers[answersKeys[randomIndex]].no
+                        let descriptions = answers[answersKeys[randomIndex]]['no']
 
                         const randomTitle = noTitles[getRndInteger(0, noTitles.length)]
                         const randomDescription = descriptions[getRndInteger(0, descriptions.length)]
@@ -207,7 +221,7 @@ client.on('messageCreate', async message => {
                         } else {
                             currentIndex++
                         }
-                    } else if (msg.content.toLowerCase() == 'ok' && !userStopped && expectingOK) {
+                    } else if (msg.content.toLowerCase() === 'ok' && !userStopped && expectingOK) {
                         let randomIndex = userSpecificRandomArray[currentIndex]
                         let titles = questions[questionsKeys[randomIndex]].titles
                         let descriptions = questions[questionsKeys[randomIndex]].descriptions
@@ -242,7 +256,7 @@ client.on('messageCreate', async message => {
                         // } else {
                         //     currentIndex++
                         // }
-                    } else if (msg.content.toLowerCase() == 'stop' && !userStopped) {
+                    } else if (msg.content.toLowerCase() === 'stop' && !userStopped) {
                         userStopped = !userStopped
                         clearTimeout(timeoutID)
                         embed = new MessageEmbed()
@@ -268,13 +282,13 @@ function getRndInteger(min, max) {
 }
 
 function setupKeys(questions, answers, questionsKeys, answersKeys) {
-    for (var key in questions) {
+    for (let key in questions) {
         if (questions.hasOwnProperty(key)) {
             questionsKeys.push(key)
         }
     }
 
-    for (var key in answers) {
+    for (let key in answers) {
         if (answers.hasOwnProperty(key)) {
             answersKeys.push(key)
         }
@@ -282,10 +296,10 @@ function setupKeys(questions, answers, questionsKeys, answersKeys) {
 }
 
 function shuffle(array) {
-    var currentIndex = array.length, randomIndex;
+    let currentIndex = array.length, randomIndex;
 
     // While there remain elements to shuffle...
-    while (currentIndex != 0) {
+    while (currentIndex !== 0) {
 
         // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
