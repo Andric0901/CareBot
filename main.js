@@ -20,8 +20,17 @@ myIntents.add(
 const client = new Client({ intents: myIntents });
 const config = require('./config.json');
 
-client.once('ready', () => {
+client.on("ready", () => {
     console.log('Hello world!');
+    // client.user.setPresence({
+    //     status: "online",  //You can show online, idle....
+    //     activity: {
+    //         name: "-help",  //The message shown
+    //         type: "PLAYING" //PLAYING: WATCHING: LISTENING: STREAMING:
+    //     }
+    // });
+    // client.user.setActivity('Almost bernt out from the tests but ok', { type: 'LISTENING' })
+    client.user.setActivity('-help <3', { type: 'PLAYING' })
 });
 
 const fs = require('fs')
@@ -57,8 +66,9 @@ client.on('messageCreate', async message => {
     const yesEmbedFields = { name: "Type 'yes'", value: "Yes!", inline: true }
     const noEmbedFields = { name: "Type 'no'", value: "No :(", inline: true }
     const stopEmbedFields = { name: "Type 'stop'", value: "To stop anytime", inline: true }
-
-    if (command === 'init') {
+    if (command === 'help') {
+        commands.get('help').execute(message)
+    } else if (command === 'init') {
         message.delete().catch()
         shuffle(randomizedIndexArray)
 

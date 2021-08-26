@@ -30,8 +30,19 @@
         ]
     },
     "exercise": {
-        "yes": ["exercise"],
-        "no": ["exercise"]
+        "yes": [
+            "Very nice! Exercise can also help combat the health problems, so rest assured knowing you did your homework and I'm very proud of you :)",
+            "Did you know that even when you are simply working out by walking, you use 200 muscles in your body? It's so cool, isn't it 😎",
+            "Remember to also bring water when exercising! Dehydration can decrease exercise performance.",
+            "Exercise can also help with focus and concentration, so you can do the best on your assignments 📚"
+        ],
+        "no": [
+            "I completely understand, and it's okay if you don't want to exercise. If you don't feel well, you should take care of yourself first! ❤",
+            "It's okay! When you feel better, you should definitely go for a simple walk though, it will make you feel better :)",
+            "When you go out to exercise, remember to also bring water! Dehydration can decrease exercise performance.",
+            "If you cannot commit to long exercise sessions, start small! Even a small walk after your dinner will help you get started.",
+            "Any amount of physical activity is better than none! If you have never exercised before, please remember that change takes time. Start small, do some low-commitment exercises like walking, and be patient to yourself! I will be so proud even when you achieve these small things :)"
+        ]
     },
     "nap": {
         "yes": ["nap"],

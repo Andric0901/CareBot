@@ -21,11 +21,17 @@
         ]
     },
     "exercise": {
-        "titles": ["exercise"],
-        "descriptions": ["exercise"]
+        "titles": ["💪", "We could totally go for a walk 👀", "Let's get some sunlight!", "Exercise!"],
+        "descriptions": [
+            "Let's grab ourselves some workout hours, shall we?",
+            "Get some fresh air, get more fit, what else? Exercising is lovely, and even if it seems tedious, you will feel better at the end :>",
+            "Exercising can help you stay active! Even if it's using stairs instead of elevators in your favorite residence, it is still better than not working out at all 💪",
+            "Everyday workouts are essential for your balanced life. Something simple like going out for a walk totally works too!",
+            "How about some quick walk outside so that you can sleep better in the night? 😴"
+        ]
     },
     "nap": {
-        "titles": ["nap"],
+        "titles": ["Naps are great and I love them", "Blankets :>", "Tired? Get some naps 🛌", ""],
         "descriptions": ["nap"]
     }
 }
