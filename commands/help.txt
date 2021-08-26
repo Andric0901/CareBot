@@ -1,0 +1,5 @@
+Hi! I'm CareBot :) I'm here to help your journey to self-care. 
+
+Call `-init` to initiate the process. Depending on the prompt, you will have a number of options available for you to reply to the bot. Just try it! There will be lots of useful self-care procedures that you can take to make your daily life a little bit better. 
+
+I can't wait to meet you! <3

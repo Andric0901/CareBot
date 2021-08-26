@@ -30,11 +30,32 @@
         ]
     },
     "exercise": {
-        "yes": ["exercise"],
-        "no": ["exercise"]
+        "yes": [
+            "Very nice! Exercise can also help combat the health problems, so rest assured knowing you did your homework and I'm very proud of you :)",
+            "Did you know that even when you are simply working out by walking, you use 200 muscles in your body? It's so cool, isn't it 😎",
+            "Remember to also bring water when exercising! Dehydration can decrease exercise performance.",
+            "Exercise can also help with focus and concentration, so you can do the best on your assignments 📚"
+        ],
+        "no": [
+            "I completely understand, and it's okay if you don't want to exercise. If you don't feel well, you should take care of yourself first! ❤",
+            "It's okay! When you feel better, you should definitely go for a simple walk though, it will make you feel better :)",
+            "When you go out to exercise, remember to also bring water! Dehydration can decrease exercise performance.",
+            "If you cannot commit to long exercise sessions, start small! Even a small walk after your dinner will help you get started.",
+            "Any amount of physical activity is better than none! If you have never exercised before, please remember that change takes time. Start small, do some low-commitment exercises like walking, and be patient to yourself! I will be so proud even when you achieve these small things :)"
+        ]
     },
     "nap": {
-        "yes": ["nap"],
-        "no": ["nap"]
+        "yes": [
+            "That's great! Naps can help with reducing fatigue, increased alertness, and improving your overall mood and mental health. Have a relaxing nap!",
+            "Did you know that there is a napping contest in Madrid, Spain? It's called the National Siesta Championship, and I bet I can do better than all the contestants 😪 where should I sign up hmmmm",
+            "Remember to create a restful and distraction-free environment before you nap. A nice dark and quiet space with a comfy couch/bed and a comfortable room temperature will work perfectly. Enjoy your nap, zzz...",
+            "Let's celebrate the National Napping Day, on March 14th! Turn off your phone, lay down in bed, and just... nap :) 🛌"
+        ],
+        "no": [
+            "It's okay! If you don't feel tired, you can continue working on your stuffs before having a great night's sleep.",
+            "No problem! If you feel tired, please make sure to take some breaks and even naps, because naps are great :)",
+            "You don't actually have to nap to get the benefits! Even 20 minutes of just lying down with eyes closed can achieve the similar results. You can try this instead 🛌",
+            "If you feel stressed, you should consider taking a nap! Naps are great de-stressing tools :>"
+        ]
     }
 }
