@@ -38,5 +38,26 @@
             "Wishing for some good napsssssss :> you want some naps too?",
             "Napping is perfectly fine! Remember when you were a smol baby you used to nap a lot? It is typical for infants to nap for 2 to 3 hours during the day, so you shouldn't feel guilty napping. How about you take some naps now? 🛌"
         ]
+    },
+    "eat": {
+        "titles": ["Munch munch", "😋", "You hungry?", "Snack time :>", "Time to eat something!"],
+        "descriptions": [
+            "Unless you just ate something, how about a bite of your favorite snack bar?",
+            "Do you have a favorite food in mind? Mine has always been the indian curry my favorite indian restaurant served 😋 You should eat something too!",
+            "If you are hungry, please eat something! Facing hunger can be stressful, so try not to skip your breakfast, I understand it is difficult to do with all your works, but I promise you will perform better if you start your day strong :>",
+            "If you've been eating your meals regularly at a certain time, skipping meals can be deadly ;-; your stomach *expects* food around your usual meal time, and strong acid in your stomach without food can burn the lining of your stomach. Please try to keep regular meal schedule, ye? :)"
+        ]
+    },
+    "clean": {
+        "titles": ["clean"],
+        "descriptions": [
+            "clean"
+        ]
+    },
+    "meditate": {
+        "titles": ["meditate"],
+        "descriptions": [
+            "meditate"
+        ]
     }
 }

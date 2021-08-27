@@ -57,5 +57,34 @@
             "You don't actually have to nap to get the benefits! Even 20 minutes of just lying down with eyes closed can achieve the similar results. You can try this instead 🛌",
             "If you feel stressed, you should consider taking a nap! Naps are great de-stressing tools :>"
         ]
+    },
+    "eat": {
+        "yes": [
+            "Did you know that bananas are actually *berries*? They develop from a flower containing one single ovary, have a soft skin and a fleshy middle. Moreover, bananas contain several seeds which many people don’t notice as they’re small. They are berries! This totally blew my mind :O",
+            "Astronaut John Young once tried to sneak his favorite beef sandwich into his 6-hour mission in space. The sandwich, obviously, couldn't stay fit under zero gravity situation, but thankfully they contained the breadcrumbs very well, which could have been deadly to the spacecraft. NASA now takes extra step to guarantee the astronauts don't take the sandwiches into space 🥪",
+            "Did you know that American cheese is not actually American? These processed cheeses are invented in Switzerland as a way to preserve the cheese better 🧀",
+            "The famous french fries are not actually from France, but rather from Belgium! They are only called French fries because they are French cut 🍟",
+            "If you wanna get some fried eggs, try floating the eggs in a glass of water! The bad ones will float, which you should avoid when making your perfect fried egg :>"
+        ],
+        "no": [
+            "Healthy eating can boost immunity and strengthen the bones! ",
+            ""
+        ]
+    },
+    "clean": {
+        "yes": [
+            "clean"
+        ],
+        "no": [
+            "clean"
+        ]
+    },
+    "meditate": {
+        "yes": [
+            "meditate"
+        ],
+        "no": [
+            "meditate"
+        ]
     }
 }
