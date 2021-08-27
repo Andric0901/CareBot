@@ -49,15 +49,21 @@
         ]
     },
     "clean": {
-        "titles": ["clean"],
+        "titles": ["🧹", "I don't like messy rooms :(", "Let's clean!", "It feels nice to have a clean room, doesn't it? :>"],
         "descriptions": [
-            "clean"
+            "If you have allergies, cleaning your room frequently can help with those! It is the best way to reduce dusts and other irritating allergens in your room, so why not start small and clean the space around you?",
+            "I know, I get it, I sometimes have messy desks because of all the works I need to do. Maybe if daily cleaning isn't suitable for you, how about cleaning it once every 3 days? Or once every week? It's better than not cleaning at all :>",
+            "House cleaning would go a lot faster if the spray bottles made laser gun sounds 👀 But seriously though, you should clean your rooms at least if it feels messy :)",
+            "Do you feel like you get sick very often? You should clean your rooms! 🧹 You will also wake up feeling fresh, so I would totally say you should give it a go and start right away ;>"
         ]
     },
     "meditate": {
-        "titles": ["meditate"],
+        "titles": ["Meditate!", "🧘‍♂️", "Close your eyes... Breathe...", "Wanna focus on your work? Start by meditating :>"],
         "descriptions": [
-            "meditate"
+            "There are many types of meditation, including movement meditation, loving-kindness meditation, and focused meditation. You can experiment with different types and see which ones work the best for you. Would you like to give it a try?",
+            "Meditation can be as simple as sitting in a quiet and calming space and letting your mind wander freely. Let's give it a shot together!",
+            "Are you starting to lose focus in your work? Perhaps it's a sign that you haven't given yourself a break. Try stepping outside for a gentle walk or doing some gardening. This is known as movement meditation :)",
+            "Are you feeling stressed out about deadlines or things in your life that are seemingly out of your control? It's not good to go about your day in a negative mindset. Try taking deep breaths and taking your mind off of what stresses you so when you go back to those things, you can produce the best work possible!"
         ]
     }
 }

@@ -86,7 +86,7 @@ module.exports = {
                 let timeoutID;
 
                 // 20 seconds for testing purposes, TODO: we should change this to something like 10 minutes
-                let inactivityCooldown = 1000 * 20;
+                let inactivityCooldown = 1000 * 60 * 10;
 
                 // Once user is inactive for 10 minutes, channel will auto-delete
 

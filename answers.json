@@ -67,24 +67,37 @@
             "If you wanna get some fried eggs, try floating the eggs in a glass of water! The bad ones will float, which you should avoid when making your perfect fried egg :>"
         ],
         "no": [
-            "Healthy eating can boost immunity and strengthen the bones! ",
-            ""
+            "Healthy eating can boost immunity and strengthen the bones! If you don't feel like eating right now, that's okay, but make sure to get some food soon 😋",
+            "Eating with friends could also be a great way to keep the meal schedule! Invite your friends, cook something together (this way you have less works to do), and eat together. I promise it will be lots of fun :>",
+            "It's okay! Don't worry, you don't need to eat if you just ate something or if you're not hungry. Make sure to stay hydrated though, that is VERY important and I cannot emphasize enough 🥤"
         ]
     },
     "clean": {
         "yes": [
-            "clean"
+            "Awesome! Clean rooms can also help with higher quality of sleep and less distraction. You did a great job, and you should enjoy your shiny clean room :>",
+            "By cleaning your room, you will also know what resources you have. You won't have to look around trying to find your favorite watch that you had long ago!",
+            "Your thoughts will also be tidied up after you clean your room! It is suggested by psychologists that a messy room is a representation of a disorganized mental state, so please remember that you did a great job handling the tedious cleaning process 🥳",
+            "If you haven't cleaned your room in a while, this must have taken you a long time to finish. I am very proud of you for cleaning, and remember to clean your room often!"
         ],
         "no": [
-            "clean"
+            "I understand, I sometimes get lazy too and skip cleaning. If you feel this way and you have vacuum cleaner nearby, how about vacuuming your room instead? I honestly love vacuums, see how satisfying it is to watch dusts being inhaled by the giant machine 😎",
+            "You can start by making your bed first! Maybe that would inspire you to clean more 👀",
+            "Start small! Make your bed first, put everything you need to organize onto your bed, clean, vacuum, and put everything together. Take breaks every half an hour, and although it might take you long to finish everything, I promise you'll feel better for yourself once you're all done :>",
+            "Yeahhh I get it, it's okay if you skip the cleaning for a day. Can you do me a favor and promise with me that you will clean your room tomorrow, ye? 🧹"
         ]
     },
     "meditate": {
         "yes": [
-            "meditate"
+            "That's great to hear! Meditation helps to increase imagination and creativity, as well as reduce negative emotions! You'll feel a difference in a short amount of time :)",
+            "Did you know that mindfulness meditation can actually change the structure of your brain? Eight weeks of Mindfulness-Based Stress Reduction was found to improve both learning and memory through increasing the cortical thickness in the hippocampus 🧠",
+            "Excellent! Let's start with some deep breathing or yoga to get you in the meditation mood 🧘‍♂️",
+            "Now it's time for all that heavy stress to slowly and gently wash away. Let our minds relax so our body can take the time it needs to reset and rejuvenate 🧘‍♂️"
+
         ],
         "no": [
-            "meditate"
+            "That's perfectly okay! If you're doing well mentally, you don't need to meditate right away, but it's important to still give yourself breaks when you're tired :)",
+            "Meditation can help you break bad habits. Most bad habits form unconsciously and meditation brings awareness to what we're doing. So if there's a habit you really want to break, meditation can absolutely help with that 🧘‍♂️",
+            "It doesn't have to be long, 5 minutes is plenty! Even if you think you could better spend that time continuing to work, your mind and body will thank you for it!"
         ]
     }
 }
