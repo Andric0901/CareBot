@@ -1,5 +1,9 @@
 Hi! I'm CareBot :) I'm here to help your journey to self-care. 
 
+Call `-help` to see all the commands that I can offer you. (you just called it!)
+
 Call `-init` to initiate the process. Depending on the prompt, you will have a number of options available for you to reply to the bot. Just try it! There will be lots of useful self-care procedures that you can take to make your daily life a little bit better. 
+
+Please use these commands only on the server! These won't work in the DM channels.
 
 I can't wait to meet you! <3
