@@ -5,8 +5,8 @@ module.exports = {
     name: "init",
     description: "Initiate conversation with CareBot",
     async execute(client, message, args) {
-        let jsonQuestions = fs.readFileSync('questions.json')
-        let jsonAnswers = fs.readFileSync('answers.json')
+        let jsonQuestions = fs.readFileSync('data/questions.json')
+        let jsonAnswers = fs.readFileSync('data/answers.json')
         const questions = JSON.parse(jsonQuestions)
         const answers = JSON.parse(jsonAnswers)
 
@@ -23,7 +23,7 @@ module.exports = {
             randomizedIndexArray.push(i)
         }
 
-        // setup the two key variables above after the arrays are emptied out
+        // setup the two key variables above
         setupKeys(questions, answers, questionsKeys, answersKeys)
 
         // Set up the different embeds that will be used
@@ -36,24 +36,15 @@ module.exports = {
         shuffle(randomizedIndexArray)
 
         // Grab the user's id from the message and put it into the userID object with the randomized array
-        let userIDObject = JSON.parse(fs.readFileSync('userID.json'))
+        let userIDObject = JSON.parse(fs.readFileSync('data/userID.json'))
         let userID = message.author.id;
         userIDObject[userID] = randomizedIndexArray
         // After modifying that user's array content, write the entire JSON back into the userID json
-        fs.writeFileSync('userID.json', JSON.stringify(userIDObject));
-        // console.log(JSON.parse(fs.readFileSync('userID.json')))
-        // userID.json contains the js object that maps from user ID to the user-specific random index array (used
-        // to randomize the embeds). TODO: read the file, store the randomized index array somewhere, and use that
-        // to actually randomize the embeds.
-        // let jsonUserID = fs.readFileSync('userID.json')
-        // const userIDs = JSON.parse(jsonUserID)
+        // userID.json contains the js object that maps from user ID to user-specific random index array (used to randomize the embeds).
+        fs.writeFileSync('data/userID.json', JSON.stringify(userIDObject));
+        
         let userSpecificRandomArray = randomizedIndexArray;
-        // for (let key in userIDs) {
-        //     if (userIDs.hasOwnProperty(key) && message.author.id === key) {
-        //         userSpecificRandomArray = userIDs[key]
-        //         break
-        //     }
-        // }
+
         // Set up the introductory embed
         let embed = new MessageEmbed()
             .setColor('#0099ff')
@@ -85,7 +76,6 @@ module.exports = {
 
                 let timeoutID;
 
-                // 20 seconds for testing purposes, TODO: we should change this to something like 10 minutes
                 let inactivityCooldown = 1000 * 60 * 10;
 
                 // Once user is inactive for 10 minutes, channel will auto-delete

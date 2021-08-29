@@ -1,3 +1,4 @@
+require("dotenv").config()
 const { Collection, Client, Intents } = require('discord.js');
 
 // new discord.js v13 update... makes things complicated :(
@@ -18,7 +19,7 @@ myIntents.add(
 );
 
 const client = new Client({ intents: myIntents });
-const config = require('./config.json');
+const config = require('./data/config.json');
 client.config = config
 const fs = require('fs')
 
@@ -45,4 +46,4 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 // Keep this at the end of the main.js file
-client.login(config.token);
+client.login(process.env.TOKEN);

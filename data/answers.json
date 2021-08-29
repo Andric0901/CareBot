@@ -1,0 +1,103 @@
+{
+    "sleep": {
+        "yes": [
+            "Sleep will help you stay active during the day.",
+            "Remember that you just made one step towards your perfect life with lots of sleep!",
+            "Did you know that sleep can also help with your heart? I thought it was interesting and I just wanted to share this with you.",
+            "Did you know that sleep actually helps with your memory? I used to memorize those boring biology terms up until I went to bed, and it actually worked! I got a 95 in that quiz, and you should try it too :)"
+        ],
+        "no": [
+            "Sleep is good for you and you shouldn't skip it! I understand life can be complex and you just have so many things to do, but I promise you will do a better job if you have a full night of sleep :)",
+            "If you have trouble sleeping, you could also try taking melatonin, unless you have side effects from it. It can also help with jet lag after a long flight, but check with your doctor first!",
+            "If you wake up in the middle of the night, don't give up too soon and attempt to fall asleep again. If you still can't sleep after 30 minutes, you should try to do some low-commitment activities such as stretching or even laundry folding!",
+            "Try to limit your screen hours before sleep! Blue lights can distract you greatly and you might have trouble sleeping.",
+            "If your room is too hot or too cold, you should try to adjust it with your fans, AC or heaters. According to the National Sleep Foundation, the ideal sleep temperature range is between 60 and 67 degrees Fahrenheit, or between 15 and 20 degrees Celsius!"
+        ]
+    },
+    "water": {
+        "yes": [
+            "If you are not happy with your weight, drinking water could also help! I'm glad you got some water, you are doing the good stuffs to your body and you should be proud of yourself :>",
+            "Did you know that Turkish people drink the most tea? Although it may not help you hydrate as much as the water does, it can certainly help you stay fit!",
+            "Do you exercise a lot? You will lose your water inside your body, so it's crucial to have some portable water bottles with you when you go to gym or do some workouts!",
+            "If you don't wanna drink water, how about trying cucumbers? It contains 96% of water so it's basically eating and hydrating 🥤"
+        ],
+        "no": [
+            "Water helps to regulate your body temperature! There's a reason why I love to drink water :)",
+            "If you don't wanna drink water, how about trying cucumbers? It contains 96% of water so it's basically eating and hydrating 🥤",
+            "Although water is the best way to hydrate your body, if you don't feel like drinking water, you could totally try fruit juices or sparkling water. Soda will actually make you thirstier so I wouldn't recommend it, but if you want to drink it, it's okay!",
+            "Water helps the blood to deliver oxygen, which helps with the brain performance. If you are studying for an exam, pls don't forget to drink water :>",
+            "If you are not happy with your weight, drinking water could also help! I'm glad you got some water, you are doing the good stuffs to your body and you should be proud of yourself :>"
+        ]
+    },
+    "exercise": {
+        "yes": [
+            "Very nice! Exercise can also help combat the health problems, so rest assured knowing you did your homework and I'm very proud of you :)",
+            "Did you know that even when you are simply working out by walking, you use 200 muscles in your body? It's so cool, isn't it 😎",
+            "Remember to also bring water when exercising! Dehydration can decrease exercise performance.",
+            "Exercise can also help with focus and concentration, so you can do the best on your assignments 📚"
+        ],
+        "no": [
+            "I completely understand, and it's okay if you don't want to exercise. If you don't feel well, you should take care of yourself first! ❤",
+            "It's okay! When you feel better, you should definitely go for a simple walk though, it will make you feel better :)",
+            "When you go out to exercise, remember to also bring water! Dehydration can decrease exercise performance.",
+            "If you cannot commit to long exercise sessions, start small! Even a small walk after your dinner will help you get started.",
+            "Any amount of physical activity is better than none! If you have never exercised before, please remember that change takes time. Start small, do some low-commitment exercises like walking, and be patient to yourself! I will be so proud even when you achieve these small things :)"
+        ]
+    },
+    "nap": {
+        "yes": [
+            "That's great! Naps can help with reducing fatigue, increased alertness, and improving your overall mood and mental health. Have a relaxing nap!",
+            "Did you know that there is a napping contest in Madrid, Spain? It's called the National Siesta Championship, and I bet I can do better than all the contestants 😪 where should I sign up hmmmm",
+            "Remember to create a restful and distraction-free environment before you nap. A nice dark and quiet space with a comfy couch/bed and a comfortable room temperature will work perfectly. Enjoy your nap, zzz...",
+            "Let's celebrate the National Napping Day, on March 14th! Turn off your phone, lay down in bed, and just... nap :) 🛌"
+        ],
+        "no": [
+            "It's okay! If you don't feel tired, you can continue working on your stuffs before having a great night's sleep.",
+            "No problem! If you feel tired, please make sure to take some breaks and even naps, because naps are great :)",
+            "You don't actually have to nap to get the benefits! Even 20 minutes of just lying down with eyes closed can achieve the similar results. You can try this instead 🛌",
+            "If you feel stressed, you should consider taking a nap! Naps are great de-stressing tools :>"
+        ]
+    },
+    "eat": {
+        "yes": [
+            "Did you know that bananas are actually *berries*? They develop from a flower containing one single ovary, have a soft skin and a fleshy middle. Moreover, bananas contain several seeds which many people don’t notice as they’re small. They are berries! This totally blew my mind :O",
+            "Astronaut John Young once tried to sneak his favorite beef sandwich into his 6-hour mission in space. The sandwich, obviously, couldn't stay fit under zero gravity situation, but thankfully they contained the breadcrumbs very well, which could have been deadly to the spacecraft. NASA now takes extra step to guarantee the astronauts don't take the sandwiches into space 🥪",
+            "Did you know that American cheese is not actually American? These processed cheeses are invented in Switzerland as a way to preserve the cheese better 🧀",
+            "The famous french fries are not actually from France, but rather from Belgium! They are only called French fries because they are French cut 🍟",
+            "If you wanna get some fried eggs, try floating the eggs in a glass of water! The bad ones will float, which you should avoid when making your perfect fried egg :>"
+        ],
+        "no": [
+            "Healthy eating can boost immunity and strengthen the bones! If you don't feel like eating right now, that's okay, but make sure to get some food soon 😋",
+            "Eating with friends could also be a great way to keep the meal schedule! Invite your friends, cook something together (this way you have less works to do), and eat together. I promise it will be lots of fun :>",
+            "It's okay! Don't worry, you don't need to eat if you just ate something or if you're not hungry. Make sure to stay hydrated though, that is VERY important and I cannot emphasize enough 🥤"
+        ]
+    },
+    "clean": {
+        "yes": [
+            "Awesome! Clean rooms can also help with higher quality of sleep and less distraction. You did a great job, and you should enjoy your shiny clean room :>",
+            "By cleaning your room, you will also know what resources you have. You won't have to look around trying to find your favorite watch that you had long ago!",
+            "Your thoughts will also be tidied up after you clean your room! It is suggested by psychologists that a messy room is a representation of a disorganized mental state, so please remember that you did a great job handling the tedious cleaning process 🥳",
+            "If you haven't cleaned your room in a while, this must have taken you a long time to finish. I am very proud of you for cleaning, and remember to clean your room often!"
+        ],
+        "no": [
+            "I understand, I sometimes get lazy too and skip cleaning. If you feel this way and you have vacuum cleaner nearby, how about vacuuming your room instead? I honestly love vacuums, see how satisfying it is to watch dusts being inhaled by the giant machine 😎",
+            "You can start by making your bed first! Maybe that would inspire you to clean more 👀",
+            "Start small! Make your bed first, put everything you need to organize onto your bed, clean, vacuum, and put everything together. Take breaks every half an hour, and although it might take you long to finish everything, I promise you'll feel better for yourself once you're all done :>",
+            "Yeahhh I get it, it's okay if you skip the cleaning for a day. Can you do me a favor and promise with me that you will clean your room tomorrow, ye? 🧹"
+        ]
+    },
+    "meditate": {
+        "yes": [
+            "That's great to hear! Meditation helps to increase imagination and creativity, as well as reduce negative emotions! You'll feel a difference in a short amount of time :)",
+            "Did you know that mindfulness meditation can actually change the structure of your brain? Eight weeks of Mindfulness-Based Stress Reduction was found to improve both learning and memory through increasing the cortical thickness in the hippocampus 🧠",
+            "Excellent! Let's start with some deep breathing or yoga to get you in the meditation mood 🧘‍♂️",
+            "Now it's time for all that heavy stress to slowly and gently wash away. Let our minds relax so our body can take the time it needs to reset and rejuvenate 🧘‍♂️"
+
+        ],
+        "no": [
+            "That's perfectly okay! If you're doing well mentally, you don't need to meditate right away, but it's important to still give yourself breaks when you're tired :)",
+            "Meditation can help you break bad habits. Most bad habits form unconsciously and meditation brings awareness to what we're doing. So if there's a habit you really want to break, meditation can absolutely help with that 🧘‍♂️",
+            "It doesn't have to be long, 5 minutes is plenty! Even if you think you could better spend that time continuing to work, your mind and body will thank you for it!"
+        ]
+    }
+}
